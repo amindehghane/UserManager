@@ -1,11 +1,14 @@
 package com.amin.usermanager.Dto;
 
+import java.time.LocalDate;
+
 public class CreateResponseDto {
 
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
+    private LocalDate dateOfBirth;
 
     public Long getId() {
         return id;
@@ -37,5 +40,13 @@ public class CreateResponseDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

@@ -1,10 +1,18 @@
 package com.amin.usermanager.Dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class CreateRequestDto {
 
+    @NotBlank
     private String firstName;
+    @NotBlank
     private String lastName;
+    @NotBlank
     private String email;
+    @NotNull
+    private PersianDateDto dateOfBirth;
 
     public String getFirstName() {
         return firstName;
@@ -28,5 +36,13 @@ public class CreateRequestDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public PersianDateDto getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(PersianDateDto dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

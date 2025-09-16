@@ -2,6 +2,8 @@ package com.amin.usermanager.Entity;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -19,6 +21,9 @@ public class User {
 
     @Column(unique = true, name = "EMAIL")
     private String email;
+
+    @Column(name = "BIRTH_DATE")
+    private LocalDate birthDate;
 
     public Long getId() {
         return id;
@@ -50,5 +55,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 }
