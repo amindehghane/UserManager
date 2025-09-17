@@ -30,6 +30,7 @@ public class UserServiceImpl implements UserService {
         user.setEmail(requestDto.getEmail());
         LocalDate birthDay = PersianDateConvertor.convertDate(requestDto.getDateOfBirth());
         user.setBirthDate(birthDay);
+        user.setPhoneNumber(requestDto.getPhoneNumber());
         mapToCreateResponseDto(user);
         userRepo.save(user);
         return mapToCreateResponseDto(user);
@@ -42,11 +43,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public CreateResponseDto update(Long id, CreateRequestDto createRequestDto) {
+    public CreateResponseDto update(Long id, CreateRequestDto requestDto) {
         User user = userRepo.findById(id).orElseThrow(() -> new RuntimeException("User Not Found"));
-        user.setFirstName(createRequestDto.getFirstName());
-        user.setLastName(createRequestDto.getLastName());
-        user.setEmail(createRequestDto.getEmail());
+        user.setFirstName(requestDto.getFirstName());
+        user.setLastName(requestDto.getLastName());
+        user.setEmail(requestDto.getEmail());
+        LocalDate birthDay = PersianDateConvertor.convertDate(requestDto.getDateOfBirth());
+        user.setBirthDate(birthDay);
+        user.setPhoneNumber(requestDto.getPhoneNumber());
         mapToCreateResponseDto(user);
         userRepo.save(user);
         return mapToCreateResponseDto(user);
@@ -65,6 +69,7 @@ public class UserServiceImpl implements UserService {
         createResponseDto.setLastName(user.getLastName());
         createResponseDto.setEmail(user.getEmail());
         createResponseDto.setDateOfBirth(user.getBirthDate());
+        createResponseDto.setPhoneNumber(user.getPhoneNumber());
         return createResponseDto;
     }
 }

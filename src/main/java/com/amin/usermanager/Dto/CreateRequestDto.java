@@ -13,6 +13,9 @@ public class CreateRequestDto {
     private String email;
     @NotNull
     private PersianDateDto dateOfBirth;
+    @NotNull
+    private String phoneNumber;
+
 
     public String getFirstName() {
         return firstName;
@@ -44,5 +47,13 @@ public class CreateRequestDto {
 
     public void setDateOfBirth(PersianDateDto dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

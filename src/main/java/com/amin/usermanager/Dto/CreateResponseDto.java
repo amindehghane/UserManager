@@ -9,6 +9,7 @@ public class CreateResponseDto {
     private String lastName;
     private String email;
     private LocalDate dateOfBirth;
+    private String phoneNumber;
 
     public Long getId() {
         return id;
@@ -48,5 +49,13 @@ public class CreateResponseDto {
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }
