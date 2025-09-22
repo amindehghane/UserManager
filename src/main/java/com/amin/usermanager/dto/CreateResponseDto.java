@@ -1,8 +1,4 @@
-package com.amin.usermanager.Dto;
-
-import com.github.mfathi91.time.PersianDate;
-
-import java.time.LocalDate;
+package com.amin.usermanager.dto;
 
 public class CreateResponseDto {
 

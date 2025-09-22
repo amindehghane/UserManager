@@ -1,4 +1,4 @@
-package com.amin.usermanager.Entity;
+package com.amin.usermanager.entity;
 
 import jakarta.persistence.*;
 

@@ -1,11 +1,11 @@
-package com.amin.usermanager.Service;
+package com.amin.usermanager.service;
 
-import com.amin.usermanager.Validation.UserValidation;
-import com.amin.usermanager.Convertor.PersianDateConvertor;
-import com.amin.usermanager.Dto.CreateRequestDto;
-import com.amin.usermanager.Dto.CreateResponseDto;
-import com.amin.usermanager.Entity.User;
-import com.amin.usermanager.Repository.UserRepo;
+import com.amin.usermanager.validation.UserValidation;
+import com.amin.usermanager.convertor.PersianDateConvertor;
+import com.amin.usermanager.dto.CreateRequestDto;
+import com.amin.usermanager.dto.CreateResponseDto;
+import com.amin.usermanager.entity.User;
+import com.amin.usermanager.repository.UserRepo;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

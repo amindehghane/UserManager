@@ -1,10 +1,10 @@
 package com.amin.usermanager;
 
-import com.amin.usermanager.Validation.UserValidation;
-import com.amin.usermanager.Convertor.PersianDateConvertor;
-import com.amin.usermanager.Dto.CreateRequestDto;
-import com.amin.usermanager.Dto.PersianDateDto;
-import com.amin.usermanager.Service.UserServiceImpl;
+import com.amin.usermanager.validation.UserValidation;
+import com.amin.usermanager.convertor.PersianDateConvertor;
+import com.amin.usermanager.dto.CreateRequestDto;
+import com.amin.usermanager.dto.PersianDateDto;
+import com.amin.usermanager.service.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

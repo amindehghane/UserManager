@@ -1,6 +1,6 @@
-package com.amin.usermanager.Validation;
+package com.amin.usermanager.validation;
 
-import com.amin.usermanager.Dto.CreateRequestDto;
+import com.amin.usermanager.dto.CreateRequestDto;
 
 public class UserValidation {
 

@@ -1,8 +1,8 @@
-package com.amin.usermanager.Controller;
+package com.amin.usermanager.controller;
 
-import com.amin.usermanager.Dto.CreateRequestDto;
-import com.amin.usermanager.Dto.CreateResponseDto;
-import com.amin.usermanager.Service.UserService;
+import com.amin.usermanager.dto.CreateRequestDto;
+import com.amin.usermanager.dto.CreateResponseDto;
+import com.amin.usermanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

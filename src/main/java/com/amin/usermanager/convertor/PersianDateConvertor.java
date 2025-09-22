@@ -1,6 +1,6 @@
-package com.amin.usermanager.Convertor;
+package com.amin.usermanager.convertor;
 
-import com.amin.usermanager.Dto.PersianDateDto;
+import com.amin.usermanager.dto.PersianDateDto;
 import com.github.mfathi91.time.PersianDate;
 
 import java.time.LocalDate;

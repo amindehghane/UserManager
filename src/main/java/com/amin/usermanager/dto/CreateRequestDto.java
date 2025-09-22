@@ -1,4 +1,4 @@
-package com.amin.usermanager.Dto;
+package com.amin.usermanager.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

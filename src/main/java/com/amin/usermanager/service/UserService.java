@@ -1,7 +1,7 @@
-package com.amin.usermanager.Service;
+package com.amin.usermanager.service;
 
-import com.amin.usermanager.Dto.CreateRequestDto;
-import com.amin.usermanager.Dto.CreateResponseDto;
+import com.amin.usermanager.dto.CreateRequestDto;
+import com.amin.usermanager.dto.CreateResponseDto;
 
 public interface UserService {
 
