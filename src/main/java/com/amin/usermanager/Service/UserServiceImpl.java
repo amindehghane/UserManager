@@ -1,8 +1,10 @@
 package com.amin.usermanager.Service;
 
+import Validation.UserValidation;
 import com.amin.usermanager.Convertor.PersianDateConvertor;
 import com.amin.usermanager.Dto.CreateRequestDto;
 import com.amin.usermanager.Dto.CreateResponseDto;
+import com.amin.usermanager.Convertor.PersianDateConvertor;
 import com.amin.usermanager.Entity.User;
 import com.amin.usermanager.Repository.UserRepo;
 import jakarta.transaction.Transactional;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+
 
 @Service
 @Transactional
@@ -25,10 +28,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public CreateResponseDto save(CreateRequestDto requestDto) {
         User user = new User();
+        if(!UserValidation.phoneNumberValidation(requestDto)){
+            throw new IllegalArgumentException("شماره تلفن نامعتبر است!");
+        }
         user.setFirstName(requestDto.getFirstName());
         user.setLastName(requestDto.getLastName());
         user.setEmail(requestDto.getEmail());
-        LocalDate birthDay = PersianDateConvertor.convertDate(requestDto.getDateOfBirth());
+        LocalDate birthDay = PersianDateConvertor.convertDateToMiladi(requestDto.getDateOfBirth());
         user.setBirthDate(birthDay);
         user.setPhoneNumber(requestDto.getPhoneNumber());
         mapToCreateResponseDto(user);
@@ -48,7 +54,7 @@ public class UserServiceImpl implements UserService {
         user.setFirstName(requestDto.getFirstName());
         user.setLastName(requestDto.getLastName());
         user.setEmail(requestDto.getEmail());
-        LocalDate birthDay = PersianDateConvertor.convertDate(requestDto.getDateOfBirth());
+        LocalDate birthDay = PersianDateConvertor.convertDateToMiladi(requestDto.getDateOfBirth());
         user.setBirthDate(birthDay);
         user.setPhoneNumber(requestDto.getPhoneNumber());
         mapToCreateResponseDto(user);
@@ -68,7 +74,9 @@ public class UserServiceImpl implements UserService {
         createResponseDto.setFirstName(user.getFirstName());
         createResponseDto.setLastName(user.getLastName());
         createResponseDto.setEmail(user.getEmail());
-        createResponseDto.setDateOfBirth(user.getBirthDate());
+        createResponseDto.setDateOfBirth(
+                PersianDateConvertor.convertDateToShamsi(user.getBirthDate())
+        );
         createResponseDto.setPhoneNumber(user.getPhoneNumber());
         return createResponseDto;
     }

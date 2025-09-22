@@ -1,5 +1,6 @@
 package com.amin.usermanager.Dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -9,7 +10,7 @@ public class CreateRequestDto {
     private String firstName;
     @NotBlank
     private String lastName;
-    @NotBlank
+    @Email(message = "ایمیل نامعتبر است!")
     private String email;
     @NotNull
     private PersianDateDto dateOfBirth;

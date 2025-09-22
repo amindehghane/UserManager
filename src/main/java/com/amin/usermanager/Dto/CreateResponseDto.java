@@ -1,5 +1,7 @@
 package com.amin.usermanager.Dto;
 
+import com.github.mfathi91.time.PersianDate;
+
 import java.time.LocalDate;
 
 public class CreateResponseDto {
@@ -8,7 +10,7 @@ public class CreateResponseDto {
     private String firstName;
     private String lastName;
     private String email;
-    private LocalDate dateOfBirth;
+    private PersianDateDto dateOfBirth;
     private String phoneNumber;
 
     public Long getId() {
@@ -43,11 +45,11 @@ public class CreateResponseDto {
         this.email = email;
     }
 
-    public LocalDate getDateOfBirth() {
+    public PersianDateDto getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(PersianDateDto dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
